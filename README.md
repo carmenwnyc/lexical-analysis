@@ -3,19 +3,14 @@
 ## About Lexical Analyzer
 A **lexical analyzer** (or **tokenizer**) converts the raw sequence of characters from the code into sequence of tokens. In order to do that, the lexical analyzer scans through the sequence of characters in the code, groups them together into lexemes, and identifies the token class for each lexeme. This project implements a basic lexical analyzer (implemented in C++) that scans streams of C code.
 
-### Setup
+## Setup
 
 1. Install `cmake` from [here](https://cmake.org/download/), or run `sudo apt-get install cmake` in your terminal/shell.
 2. Run the `build.sh` script as follows: `bash build.sh`.
 
-### Main Assignment (100 Points)
 
-We have provided a C++ file, [`src/Lexer.cpp`](src/Lexer.cpp), as well as a header file, [`src/Lexer.h`](src/Lexer.h), that contain setup code and helper classes/functions for tokens, token classes, state transitions, and outputting tokens. Your task will be to fill in the missing items of the tokenizer to generate all tokens for an input code snippet.
-
-The TODO comments indicate all parts of the lexical analyzer that you need to implement in this assignment:
-1. [`stateTransition`](src/Lexer.cpp#L36): we have implemented the state transition for the `if` keyword. You are responsible for implementing the rest of the state transitions.
-2. [`tokenizeCode`](src/Lexer.cpp#L59): we have generated tokens for parentheses, curly braces, and the `if` keyword. You are responsible for generating the rest of the tokens.
-A list of token classes that the program support:
+## Main Program
+Lexical Analyzer is implemented in src/Lexer.cpp. Below are the token classes implemented.
 
 * [ ] **Keywords **: any tokens from the list [_**if**_/_**else**_, _**for**_, _**while**_, _**extern**_, _**asm**_]
 	* Token class: _KEYWORD_
@@ -33,7 +28,7 @@ A list of token classes that the program support:
 	* Token class: _COMMENT_
 * [ ] **Operators **: any tokens represented by a unary operator, binary operator, or an assignment operator, specifically from the list [_**++**_,&nbsp;_**--**_,&nbsp;_**>**_,&nbsp;_**<**_,&nbsp;_**>=**_,&nbsp;_**<=**_,&nbsp;_**==**_,&nbsp;_**=**_]
 	* Token classes: _UNOP_, _BINOP_, _ASSIGNOP_
-* [ ] **Parentheses, Braces, and Semicolons (0 Points)**: any tokens from the list [_**(**_,&nbsp;_**)**_,&nbsp;_**{**_,&nbsp;_**}**_,&nbsp;_**;**_]
+* [ ] **Parentheses, Braces, and Semicolons **: any tokens from the list [_**(**_,&nbsp;_**)**_,&nbsp;_**{**_,&nbsp;_**}**_,&nbsp;_**;**_]
 	* Token classes: _LPAR_, _RPAR_, _LBRACE_, _RBRACE_, _SEMICOLON_
 	
 ### Example
