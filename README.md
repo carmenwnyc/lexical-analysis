@@ -11,7 +11,7 @@ A **lexical analyzer** (or **tokenizer**) converts the raw sequence of character
 
 ## Main Program
 Lexical Analyzer is implemented in `src/Lexer.cpp`. Below are the token classes implemented.
-
+* Note: Template in `src/Lexer.cpp` was originally provided by Saikat Chakraborty on 9/11/2020. Functions stateTransition() and tokenizeCode() written by Carmen Wu
 * [ ] **Keywords**: any tokens from the list [_**if**_/_**else**_, _**for**_, _**while**_, _**extern**_, _**asm**_]
 	* Token class: _KEYWORD_
 * [ ] **Identifiers**: any tokens that begin with an **_alphabetic_** (including both capital and lowercase) character or an **_underscore_** (_), followed by at most 16 alphanumeric characters and/or underscore (EXCEPT for the keyword tokens)
