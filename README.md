@@ -10,7 +10,7 @@ A **lexical analyzer** (or **tokenizer**) converts the raw sequence of character
 
 
 ## Main Program
-Lexical Analyzer is implemented in src/Lexer.cpp. Below are the token classes implemented.
+Lexical Analyzer is implemented in `src/Lexer.cpp`. Below are the token classes implemented.
 
 * [ ] **Keywords **: any tokens from the list [_**if**_/_**else**_, _**for**_, _**while**_, _**extern**_, _**asm**_]
 	* Token class: _KEYWORD_
