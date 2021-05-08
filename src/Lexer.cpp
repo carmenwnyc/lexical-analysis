@@ -1,5 +1,6 @@
 //
-// Created by Saikat Chakraborty on 9/11/20.
+// Template originally provided by Saikat Chakraborty on 9/11/20.
+// functions stateTransition() and tokenizeCode() written by Carmen Wu
 //
 #include <iostream>
 #include <string>
@@ -63,47 +64,6 @@ bool strAlpha(std::string &target){
 }
 
 /*
-//look_ahead function to look ahead by 1 position
-std::string look_ahead(char ch){
-    if (inList(whitespace_list,ch))
-    {
-        token_accepted = true;
-        return "";
-    }
-    else
-    {
-        //restore buffer and pointer to original 
-        for (int i=0; i<pt; i++){
-            buf[i] = 0;
-        }
-        pt = 0;
-        buf[0] = ch;
-        return stateTransition("", ch); 
-    }
-}
-*/
-
-/*
-        if (look_ahead == true)
-        {
-            if (inList(whitespace_list,current_character))
-            {
-                token_accepted = true;
-            }
-            else
-            {
-                //restore buffer and pointer to original 
-                for (int i=0; i<pt; i++){
-                    buf[i] = 0;
-                }
-                pt = 0;
-                buf[0] = current_character;
-                next_state = stateTransition("", current_character);
-            }
-            look_ahead = false;
-        }
-*/
-/*
  * We simulate the state transitions with a DFA here.
  * The next state should be constructed based on the current state and the
  * input character.
@@ -130,22 +90,7 @@ std::string look_ahead(char ch){
  *      the comments. See LexerTest.cpp for the relevant test case.
  */
 std::string stateTransition(std::string current_state, char ch) {
-    /*
-    if (current_state.empty()) {
-        // When the state is empty, the input character will represent the
-        // current state.
-        current_state.push_back(ch);
-        return current_state;
-    }
-    */
-    // TODO: implement the rest of the state transitions.
-    /*
-    //keyword: if
-    else if (current_state == "i" && ch == 'f')
-    {
-        return "if";
-    }
-    */
+    //Author: Carmen Wu
 
     //handle whitespaces at the beginning
     //eg.     extern
@@ -448,15 +393,9 @@ std::string stateTransition(std::string current_state, char ch) {
 //loop count:
 int loop_count=0;
 std::vector<Token> tokenizeCode(std::string _character_stream) {
+    //Author: Carmen Wu
+
     std::vector<Token> tokens;
-    /*
-     * Note to the students:
-     *   You should not make any changes to the function prototype (i.e., 
-     *   function name, parameter, and return type). Any such changes cause the
-     *   test suite to fail.
-     *   You may define auxiliary/helper functions, which can then be called
-     *   from this function.
-     */
 
     //append "\n" to input stream so that we could implement cases where an EOF immediately follows data
     //such as "if", "n=1234";
